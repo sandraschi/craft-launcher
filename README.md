@@ -1,17 +1,10 @@
 <p align="center">
-  <a href="https://getartcraft.com/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
-      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
-    </picture>
-  </a>
+  <img src="assets/app-icon/hicolor/256x256/apps/ai.sandraschi.craftdeck.png" width="128" height="128" alt="CraftDeck icon: a teal stylised letter D">
 </p>
 
-<p align="center">
-  <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.artcraft-launcher.png" width="128" height="128" alt="ArtCraft Launcher icon: a blue stylised letter A">
-</p>
+<h1 align="center">CraftDeck</h1>
 
-<h1 align="center">ArtCraft Launcher</h1>
+<p align="center">A friendly fork of <a href="https://github.com/storytold/craft-launcher">storytold/craft-launcher</a>, extended with Sandra's own Craft apps.<br>The upstream project and the ArtCraft suite remain trademarks of their owners.</p>
 
 <p align="center">
   <b>One place to install, update and open every app in the Craft App Suite, rebuilt in pure Rust.</b><br>
@@ -25,24 +18,19 @@
   <img alt="License: MIT OR Apache-2.0" src="https://img.shields.io/badge/license-MIT%20%2F%20Apache--2.0-3a3a3a?style=flat-square">
   <img alt="Status: early alpha" src="https://img.shields.io/badge/status-early%20alpha-d69e2e?style=flat-square">
   <br>
-  <a href="https://sonarcloud.io/project/overview?id=storytold_craft-launcher"><img alt="Scanned by SonarCloud" src="https://img.shields.io/badge/Scanned_by-SonarCloud-4b9fd5?style=flat-square&logo=sonarqubecloud&logoColor=white"></a>
-  <a href="https://coderabbit.ai"><img alt="Reviewed by CodeRabbit" src="https://img.shields.io/coderabbit/prs/github/storytold/craft-launcher?style=flat-square&label=Reviewed%20by%20CodeRabbit&logo=coderabbit"></a>
 </p>
 
-<p align="center">
-  <a href="https://discord.gg/artcraft"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
-</p>
 
 <p align="center">
-  <a href="https://github.com/storytold/craft-launcher/releases/latest"><b>Download ArtCraft Launcher</b></a> ·
-  <a href="https://getartcraft.com/">ArtCraft</a> ·
-  <a href="https://getartcraft.com/apps">The Craft App Suite</a>
+  <a href="https://github.com/sandraschi/craft-launcher/releases/latest"><b>Download CraftDeck</b></a> |
+  <a href="https://github.com/sandraschi/craft-deck">sandraschi/craft-deck</a> |
+  <a href="https://github.com/storytold/craft-launcher">upstream: storytold/craft-launcher</a>
 </p>
 
 > [!NOTE]
-> **ArtCraft is a community of artists from all walks of life.** Painters, photographers,
-> filmmakers, illustrators, designers, animators, hobbyists, and people who picked up a pencil
-> last week. If you make things, you're one of us. **[Come say hi on Discord](https://discord.gg/artcraft).**
+> **CraftDeck is a friendly fork.** Same launcher, plus Sandra's own Craft apps in the same cards.
+> Upstream lives at [storytold/craft-launcher](https://github.com/storytold/craft-launcher);
+> ArtCraft and the Craft App Suite remain trademarks of their owners.
 
 <p align="center">
   <a href="#what-it-does">What it does</a> ·
@@ -50,20 +38,12 @@
   <a href="#downloads">Downloads</a> ·
   <a href="#build-from-source">Build from source</a> ·
   <a href="#the-craft-app-suite">Craft App Suite</a> ·
-  <a href="https://discord.gg/artcraft">Discord</a>
 </p>
 
-<p align="center">
-  <img src="docs/screenshots/artcraft-launcher-grid.png" alt="ArtCraft Launcher on macOS in the grid view (dark theme): a card for each Craft App with its icon, status, version, release date and an Install or Open button" width="900">
-</p>
-<p align="center">
-  <img src="docs/screenshots/artcraft-launcher-table.png" alt="The same apps in the table view (light theme), with columns for each app's status, installed and latest versions, and release date" width="900"><br>
-  <sub>Switch between the grid and a sortable table.</sub>
-</p>
 
 ## What it does
 
-The Craft apps each ship their own builds for every platform. ArtCraft Launcher saves you from
+The Craft apps each ship their own builds for every platform. CraftDeck saves you from
 hunting through a dozen release pages: it lists every app in the suite, shows which ones you have
 and which version, installs the right build for your operating system and processor, and tells
 you when an update is out. It is a small native app that can sit in your menu bar or system tray.
@@ -119,7 +99,7 @@ Traditional Chinese catalog and font details.
 
 ## Where apps are installed
 
-ArtCraft Launcher installs each app where your system normally keeps applications, using the
+CraftDeck installs each app where your system normally keeps applications, using the
 app's official release package, so an app installed by the launcher is the same as one you
 installed by hand (and the launcher finds apps you installed yourself):
 
@@ -131,7 +111,7 @@ installed by hand (and the launcher finds apps you installed yourself):
 | Linux, inside the launcher's Flatpak, with no Flatpak on the host | `~/.var/app/ai.storyteller.artcraft-launcher/data/artcraft-launcher/apps/<app>` | The release tarball, unpacked into the launcher's own folder and run inside the same sandbox, with its settings in a `home/` folder beside it. Nothing is installed on the host, and each app's configuration stays in the sandbox |
 | FreeBSD | `/usr/local` | The release tree, with a password prompt (polkit); `~/.local` when polkit isn't installed |
 
-ArtCraft Launcher keeps itself current too: when a new version is out, **Update and restart**
+CraftDeck keeps itself current too: when a new version is out, **Update and restart**
 downloads it, verifies it, puts it where this copy is installed (the `.app`, the Windows Installer
 package or portable folder, the AppImage, or the `.deb`/`.rpm`) and reopens it.
 
@@ -139,14 +119,14 @@ Updates use the same format an app was installed with. Every download is checked
 release's published SHA-256 before it is installed, and a running app is never replaced.
 
 The launcher writes its log to `logs/artcraft-launcher.log` in its data folder
-(`~/.local/share/artcraft-launcher` on Linux, `~/Library/Application Support/ArtCraft Launcher`
-on macOS, `%LOCALAPPDATA%\ArtCraft Launcher` on Windows, `ArtCraftLauncherData` beside the
+(`~/.local/share/artcraft-launcher` on Linux, `~/Library/Application Support/CraftDeck`
+on macOS, `%LOCALAPPDATA%\CraftDeck` on Windows, `ArtCraftLauncherData` beside the
 portable zip's executable) and keeps the previous two runs as `artcraft-launcher.1.log` and
 `artcraft-launcher.2.log`. `RUST_LOG` changes what it records (`debug`, `info,zbus=warn`, …).
 
 ## Downloads
 
-Download the build for your computer from the [latest release](https://github.com/storytold/craft-launcher/releases/latest), or browse [all releases](https://github.com/storytold/craft-launcher/releases). Every release has a `SHA256SUMS.txt` to check the files against. `<ver>` is the version number, for example `0.1.0`.
+Download the build for your computer from the [latest release](https://github.com/sandraschi/craft-launcher/releases/latest), or browse [all releases](https://github.com/sandraschi/craft-launcher/releases). Every release has a `SHA256SUMS.txt` to check the files against. `<ver>` is the version number, for example `0.1.0`.
 
 **Windows** (10 and 11)
 
@@ -161,7 +141,7 @@ Download the build for your computer from the [latest release](https://github.co
 
 | File | What it is |
 |---|---|
-| `artcraft-launcher-<ver>-macos-universal.dmg` | Universal app for Apple silicon and Intel Macs, signed and notarized. Drag ArtCraft Launcher to Applications |
+| `artcraft-launcher-<ver>-macos-universal.dmg` | Universal app for Apple silicon and Intel Macs, signed and notarized. Drag CraftDeck to Applications |
 
 **Linux** (x86_64 and aarch64; glibc 2.35 or newer, e.g. Ubuntu 22.04+, Debian 12+, Fedora 36+)
 
@@ -254,13 +234,13 @@ New contributors and AI agents: start with [`AGENTS.md`](AGENTS.md). Release pac
 [`packaging/`](packaging/) and [`.github/workflows/release.yml`](.github/workflows/release.yml).
 
 > [!IMPORTANT]
-> **Status:** ArtCraft Launcher is new and in early alpha. Expect rough edges, and please file
+> **Status:** CraftDeck is new and in early alpha. Expect rough edges, and please file
 > issues (include your OS, which app you were installing and the launcher's log file) or tell us on
 > [Discord](https://discord.gg/artcraft).
 
 ## The Craft App Suite
 
-ArtCraft Launcher installs the **Craft App Suite**: free, open-source creative tools from the
+CraftDeck installs the **Craft App Suite**: free, open-source creative tools from the
 [ArtCraft](https://getartcraft.com/) team, each written from scratch in Rust and each able to
 stand on its own.
 
@@ -288,9 +268,6 @@ And [**ArtCraft**](https://getartcraft.com/) itself, our AI image and video stud
 
 <br>
 
-<p align="center">
-  <a href="https://discord.gg/artcraft"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
-</p>
 
 <h3 align="center">Come make things with us</h3>
 
@@ -301,18 +278,16 @@ And [**ArtCraft**](https://getartcraft.com/) itself, our AI image and video stud
   Whatever your medium and however long you've been at it, you're welcome here.
 </p>
 
-<p align="center">
-  <a href="https://discord.gg/artcraft"><b>discord.gg/artcraft</b></a> ·
-  <a href="https://getartcraft.com/">getartcraft.com</a> ·
-  <a href="https://getartcraft.com/apps">The Craft App Suite</a> ·
-  <a href="https://github.com/storytold/craft-launcher">ArtCraft Launcher</a>
+  <a href="https://github.com/sandraschi/craft-deck">sandraschi/craft-deck</a> |
+  <a href="https://github.com/sandraschi/craft-launcher/releases/latest">CraftDeck releases</a> |
+  <a href="https://github.com/storytold/craft-launcher">upstream: storytold/craft-launcher</a>
 </p>
 
 ---
 
 ## Thanks
 
-The community built launchers for the Craft App Suite before we did, and ArtCraft Launcher learned a
+The community built launchers for the Craft App Suite before we did, and CraftDeck learned a
 lot from them. Thank you to their authors:
 
 | Project | Author | What we learned from it |
@@ -324,7 +299,7 @@ lot from them. Thank you to their authors:
 | [CraftHub](https://github.com/CraftHubLauncher/CraftHub) | [CraftHubLauncher](https://github.com/CraftHubLauncher) | Strict checks on where downloads come from, clear rate-limit messages, never replacing an app while it runs |
 | [artcraft-suite](https://github.com/erikerikerik/artcraft-suite) | [@erikerikerik](https://github.com/erikerikerik) | ETag-cached release checks and installs that recover cleanly from interruptions |
 | [Craft Apps Launcher & Installer](https://github.com/ZifuM/Craft-apps-launcher-installer) | [@ZifuM](https://github.com/ZifuM) | Release-page fallbacks and starting AppImage apps with a clean environment |
-| [ArtCraft Launcher](https://github.com/EricVogt93/artcraft-launcher) | [@EricVogt93](https://github.com/EricVogt93) | Desktop integration for AppImages and a careful self-update design |
+| [CraftDeck](https://github.com/EricVogt93/artcraft-launcher) | [@EricVogt93](https://github.com/EricVogt93) | Desktop integration for AppImages and a careful self-update design |
 | [LandingCraft](https://github.com/rallegretti/LandingCraft) | [@rallegretti](https://github.com/rallegretti) | Working with the Windows Installer directly and offering stable releases only |
 | [Craft Apps Manager](https://github.com/CryptoKey98/craft-apps-manager) | [@CryptoKey98](https://github.com/CryptoKey98) | Scheduled background update checks and per-app launch options |
 | [ArtCraft Hub Launcher](https://github.com/tinyplayerss/artcraft-hub-launcher) | [@tinyplayerss](https://github.com/tinyplayerss) | A friendly, one-window hub for the whole suite |
@@ -332,8 +307,8 @@ lot from them. Thank you to their authors:
 
 ## License and credits
 
-ArtCraft Launcher is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
-Copyright (c) 2026 ArtCraft Team and the ArtCraft Launcher contributors. Required notices are in [NOTICE](NOTICE).
+CraftDeck is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
+Copyright (c) 2026 ArtCraft Team and the CraftDeck contributors. Required notices are in [NOTICE](NOTICE).
 
 Bundled fonts, icons, images and other assets keep their own open licenses; each one is listed
 with its author, source and license in [ATTRIBUTION.md](ATTRIBUTION.md).
@@ -345,10 +320,9 @@ from its repository and licensed like that app (MIT OR Apache-2.0).
 in [`docs/brand/`](docs/brand/), plus the app icon in [`assets/app-icon/`](assets/app-icon/), the
 logo in the launcher's header and the "A" tray icon)
 are trademarks of the ArtCraft Team and are not covered by this license. They may be used only unmodified, and only as
-part of this repository and ArtCraft Launcher, under [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt).
+part of this repository and CraftDeck, under [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt).
 Forks and modified versions must remove them.
 
 <p align="center">
-  <a href="https://getartcraft.com/"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
-  <sub>Made by the <a href="https://getartcraft.com/">ArtCraft</a> team and community.</sub>
+  <sub>CraftDeck: a friendly fork of <a href="https://github.com/storytold/craft-launcher">storytold/craft-launcher</a>.</sub>
 </p>

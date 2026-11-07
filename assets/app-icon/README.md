@@ -1,4 +1,4 @@
-# ArtCraft Launcher app icon
+# CraftDeck app icon
 
 The app icon is the **ArtCraft "A" mark in blue** (getartcraft.com's favicon), exactly as supplied in
 [`docs/brand/artcraft-mark.svg`](../../docs/brand/artcraft-mark.svg). Every file in this
@@ -7,7 +7,7 @@ directory is rendered from it by `packaging/icons.sh`.
 **These files are an ArtCraft trademark. They are not open source and not covered by ArtCraft
 Launcher's MIT or Apache-2.0 license.** Their terms are in
 [`docs/brand/LICENSE-brand.txt`](../../docs/brand/LICENSE-brand.txt): use them only as part of
-ArtCraft Launcher, never redraw, recolor or crop them, and remove them from forks and modified
+CraftDeck, never redraw, recolor or crop them, and remove them from forks and modified
 versions.
 
 ## Files
