@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- CraftDeck app icon source. Teal rounded tile, white bold D. -->
+  <!-- Rendered PNGs are generated (see assets/app-icon/README.md); this SVG is the master. -->
+  <rect x="4" y="4" width="504" height="504" rx="114" fill="#0FA3A3"/>
+  <text x="256" y="356" font-family="Segoe UI, Verdana, DejaVu Sans, sans-serif" font-weight="bold" font-size="318" fill="#FFFFFF" text-anchor="middle">D</text>
+</svg>
