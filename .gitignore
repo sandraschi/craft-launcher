@@ -9,3 +9,7 @@ builds/
 /temp
 /craft-fonts
 result
+
+# Fork scratch backups (timestamped .bak) — never commit
+*.bak
+*.bak.*
