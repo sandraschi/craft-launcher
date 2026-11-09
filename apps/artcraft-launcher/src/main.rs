@@ -30,7 +30,7 @@ use artcraft_launcher_ui_egui::theme::Tokens;
 use artcraft_launcher_ui_egui::{Host, LauncherUi, Settings, TitleBar};
 use eframe::wgpu::rwh::{HasDisplayHandle, RawDisplayHandle};
 
-const APP_ID: &str = "ai.storyteller.artcraft-launcher";
+const APP_ID: &str = "ai.sandraschi.craftdeck";
 const SETTINGS_KEY: &str = "settings";
 
 type Wake = Arc<OnceLock<Box<dyn Fn() + Send + Sync>>>;
@@ -165,7 +165,7 @@ fn main() -> ExitCode {
 /// short adapter cannot fail device creation.
 fn native_options(hidden: bool) -> eframe::NativeOptions {
     let icon =
-        eframe::icon_data::from_png_bytes(include_bytes!("../../../assets/app-icon/hicolor/256x256/apps/ai.storyteller.artcraft-launcher.png")).ok();
+        eframe::icon_data::from_png_bytes(include_bytes!("../../../assets/app-icon/hicolor/256x256/apps/ai.sandraschi.craftdeck.png")).ok();
     let mut viewport = egui::ViewportBuilder::default()
         .with_title("ArtCraft Launcher")
         .with_app_id(APP_ID)
