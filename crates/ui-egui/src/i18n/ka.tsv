@@ -201,6 +201,7 @@ cadcraft	Computer-aided design and drafting	დაპროექტება �
 soundcraft	Recording, editing and mixing audio	აუდიოს ჩაწერა, რედაქტირება და მიქსირება
 figcraft	Interface design and prototyping	ინტერფეისის დიზაინი და პროტოტიპირება
 solidcraft	Parametric 3D CAD	პარამეტრული 3D დაპროექტება
+devcraft	Fleet cockpit	ფლოტის კაბინა
 
 # Contextual: month abbreviations for date rendering
 month	Jan	იან
