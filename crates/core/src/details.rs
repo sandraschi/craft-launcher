@@ -139,7 +139,7 @@ pub fn screenshot_within_budget(bytes: &[u8]) -> bool {
 /// Where every Craft App runs (getartcraft.com lists the same for each of them).
 const PLATFORMS: &str = "macOS, Windows, Linux, FreeBSD, web";
 
-pub const DETAILS: [AppDetails; 17] = [
+pub const DETAILS: [AppDetails; 18] = [
     AppDetails {
         id: "photocraft",
         headline: "The image editor you already know how to use.",
@@ -531,6 +531,18 @@ pub const DETAILS: [AppDetails; 17] = [
         ],
         shots: &[],
         platforms: PLATFORMS,
+    },
+    AppDetails {
+        id: "devcraft",
+        headline: "The fleet cockpit for one person and four IDEs.",
+        about: "A native window over the checkouts next to it. Git status, the morning digest, claims, and the port registry are one board. Cursor, OpenCode, Antigravity, and Claude call the same tools over stdio.",
+        features: &[
+            feature("One board", "Columns come from the working tree, the handover, and who holds the checkout."),
+            feature("The morning digest", "Open pull requests, replies, and drift are charts before the git scan finishes."),
+            feature("Same commands", "The window, the CLI, and MCP call one cockpit. Nothing listens on a port."),
+        ],
+        shots: &[],
+        platforms: "Windows",
     },
 ];
 

@@ -1,4 +1,4 @@
-//! The Craft App Suite: the seventeen apps the launcher knows about.
+//! The Craft App Suite: the eighteen apps the launcher knows about.
 //!
 //! The list is data so a later version can fetch it from an API; [`SUITE`] is the built-in copy.
 //!
@@ -123,7 +123,7 @@ const fn app(
 }
 
 /// The Craft App Suite, in display order matching getartcraft.com, then the community apps:
-pub const SUITE: [CraftApp; 17] = [
+pub const SUITE: [CraftApp; 18] = [
     app("photocraft", "PhotoCraft", "Image editing", [[0x2f, 0x7b, 0xf5], [0x1a, 0x5b, 0xc4], [0x7f, 0xb0, 0xff]], "storytold/photocraft"),
     app("vectorcraft", "VectorCraft", "Vector illustration", [[0xe8, 0x57, 0x3f], [0xb8, 0x3a, 0x24], [0xff, 0x8a, 0x70]], "storytold/vectorcraft"),
     app(
@@ -238,6 +238,15 @@ pub const SUITE: [CraftApp; 17] = [
             "tangency-labs/solidcraft",
         )
     },
+    CraftApp {
+        kind: AppKind::Community,
+        publisher: "Sandra Schipal",
+        bundle: Some("ai.sandraschi.devcraft"),
+        site: Some("https://github.com/sandraschi/devcraft"),
+        // No macOS signature yet, so the card links to the checkout and does not install a DMG.
+        mac_team: None,
+        ..app("devcraft", "DevCraft", "Fleet cockpit", [[0x1e, 0x3a, 0x5f], [0x14, 0x28, 0x42], [0x8f, 0xb8, 0xe0]], "sandraschi/devcraft")
+    },
 ];
 
 /// The Apple Developer team that signs every official Craft App and ArtCraft Launcher (Learning
@@ -299,6 +308,7 @@ pub fn app_icon_png(id: &str) -> Option<&'static [u8]> {
         "materialcraft" => include_bytes!("../../../assets/app-icons/materialcraft.png"),
         "craft-anything" => include_bytes!("../../../assets/app-icons/craft-anything.png"),
         "solidcraft" => include_bytes!("../../../assets/app-icons/solidcraft.png"),
+        "devcraft" => include_bytes!("../../../assets/app-icons/devcraft.png"),
         "cadcraft" => include_bytes!("../../../assets/app-icons/cadcraft.png"),
         "soundcraft" => include_bytes!("../../../assets/app-icons/soundcraft.png"),
         "figcraft" => include_bytes!("../../../assets/app-icons/figcraft.png"),
@@ -321,8 +331,8 @@ mod tests {
 
     /// Every catalog entry must have a distinct lookup key.
     #[test]
-    fn suite_has_seventeen_apps_with_unique_ids() {
-        assert_eq!(SUITE.len(), 17);
+    fn suite_has_eighteen_apps_with_unique_ids() {
+        assert_eq!(SUITE.len(), 18);
         let mut ids: Vec<_> = SUITE.iter().map(|a| a.id).collect();
         ids.sort_unstable();
         ids.dedup();
@@ -335,6 +345,17 @@ mod tests {
                 AppKind::Community => assert!(!a.repo.starts_with("storytold/"), "{} is community", a.id),
             }
         }
+    }
+
+    #[test]
+    fn devcraft_points_at_its_checkout() {
+        let app = CraftApp::by_id("devcraft").unwrap();
+        assert_eq!(app.kind, AppKind::Community);
+        assert_eq!(app.repo, "sandraschi/devcraft");
+        assert_eq!(app.repo_url(), "https://github.com/sandraschi/devcraft");
+        assert_eq!(app.website(), "https://github.com/sandraschi/devcraft");
+        assert_eq!(app.bundle_id(), "ai.sandraschi.devcraft");
+        assert!(!app.installs(crate::PackageKind::Dmg));
     }
 
     #[test]
