@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Regenerate every app and tray icon from the ArtCraft "A" mark in docs/brand/, rendered exactly as
-# supplied. The mark is an ArtCraft trademark, NOT MIT/Apache: docs/brand/LICENSE-brand.txt.
+# Regenerate the CraftDeck app and tray icons from assets/app-icon/craftdeck.svg (own asset, MIT OR Apache-2.0),
+# rendered at fixed sizes. Needs resvg for SVG work; .ico/.icns are packed by `cargo xtask ico|icns`.
 #
 # - App icon (Dock, taskbar, Start menu, Linux menus, installers): the blue mark, which is also
 #   getartcraft.com's favicon.
@@ -15,8 +15,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DIR="$ROOT/assets/app-icon"
 BRAND="$ROOT/docs/brand"
-SVG="$BRAND/artcraft-mark.svg"
-ID="ai.storyteller.artcraft-launcher"
+SVG="$ROOT/assets/app-icon/craftdeck.svg"
+ID="ai.sandraschi.craftdeck"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
