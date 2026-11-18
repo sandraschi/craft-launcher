@@ -27,13 +27,13 @@ pub struct Tray {
 }
 
 fn load_icon() -> Result<tray_icon::Icon, String> {
-    // The ArtCraft "A" mark (an ArtCraft trademark, not MIT/Apache: docs/brand/LICENSE-brand.txt).
-    // macOS tints the black mark to the menu bar's colours as a template image; elsewhere the
-    // blue mark is shown as supplied.
+    // CraftDeck "D" tile (own asset, MIT OR Apache-2.0).
+    // macOS tints the black template to the menu bar's colours as a template image; elsewhere the
+    // teal tile is shown as supplied.
     let bytes: &[u8] = if cfg!(target_os = "macos") {
-        include_bytes!("../../../docs/brand/artcraft-mark-black-44.png")
+        include_bytes!("../../../assets/tray/tray-template.png")
     } else {
-        include_bytes!("../../../docs/brand/artcraft-mark-64.png")
+        include_bytes!("../../../assets/tray/tray.png")
     };
     let img = image::load_from_memory_with_format(bytes, image::ImageFormat::Png).map_err(|e| e.to_string())?.into_rgba8();
     let (w, h) = img.dimensions();
